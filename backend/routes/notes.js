@@ -84,10 +84,10 @@ router.post('/notes/upload', isAuthenticated, upload.single('image'), async (req
           contentType: req.file.mimetype,
         });
         
-        const response = await axios.post('http://localhost:5000/ocr', formData, {
-          headers: formData.getHeaders(),
-        });
-        
+const response = await axios.post('https://ocr-service-notas-ia.onrender.com/ocr', formData, {
+  headers: formData.getHeaders(),
+});
+
 
         const extractedText = response.data.text || 'Texto no detectado';
 
