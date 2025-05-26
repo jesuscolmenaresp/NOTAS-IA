@@ -1,0 +1,112 @@
+/* stylesheets/edit-note.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 40px 20px;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+}
+
+body.dark-mode {
+  background-color: #1f1f2e;
+  color: #ffffff;
+}
+
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #1f1f2e;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 28px;
+  color: #9f79ff;
+  margin-bottom: 10px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid #9f79ff;
+  color: #9f79ff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: #9f79ff;
+  color: #fff;
+}
+
+main {
+  max-width: 600px;
+  margin: auto;
+  background-color: #2a2a3d;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,213,0.05);
+}
+
+body.light-mode main {
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+.note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input[type="text"],
+textarea {
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  background-color: #f0f0f0;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode textarea {
+  background-color: #3a3a4d;
+  color: white;
+  border: 1px solid #555;
+}
+
+.save-btn {
+  background-color: #00ffd5;
+  color: #000;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #00ccaa;
+}

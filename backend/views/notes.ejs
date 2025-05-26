@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Notas - NotasIA</title>
+  <link rel="stylesheet" href="/stylesheets/notes.css">
+</head>
+<body>
+  <h1>📝 Mis Notas</h1>
+  <button id="toggle-theme">🌞 Cambiar Tema</button>
+
+
+<!-- Barra de navegación -->
+<nav class="navbar">
+  <a href="/dashboard">🏠 Volver al Dashboard</a>
+  <a href="/notes/add">➕ Nueva Nota</a>
+  <a href="/notes/upload">📸 Subir Imagen</a>
+  <a href="/files">📄 Ver PDFs</a>
+  <a href="/logout">🔒 Cerrar Sesión</a>
+</nav>
+
+
+  <h2>Lista de Notas:</h2>
+
+  <% if (notes.length > 0) { %>
+    <ul>
+      <% notes.forEach(note => { %>
+        <li>
+          <strong><%= note.title %></strong><br>
+          <p><%= note.content %></p>
+          <small><strong>Fecha:</strong> <%= note.created_at_formatted %></small><br>
+<div class="note-actions">
+  <a class="btn download" href="/notes/<%= note.id %>/download" target="_blank">📄 Descargar</a>
+  <a class="btn edit" href="/notes/<%= note.id %>/edit">✏️ Editar</a>
+  <form action="/notes/<%= note.id %>/delete" method="POST">
+    <button type="submit" class="btn delete" onclick="return confirm('¿Seguro que quieres eliminar esta nota?')">🗑️ Eliminar</button>
+  </form>
+</div>
+
+        </li>
+        <hr>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No tienes notas aún.</p>
+  <% } %>
+
+  <script>
+  const toggleBtn = document.getElementById('toggle-theme');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+  });
+</script>
+
+
+</body>
+</html>

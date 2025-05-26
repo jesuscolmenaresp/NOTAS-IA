@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Nota - NotasIA</title>
+  <link rel="stylesheet" href="/stylesheets/addnote.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <h1>➕ Agregar Nueva Nota</h1>
+
+    <div class="top-buttons">
+      <a href="/notes" class="btn-back">🔙 Volver a Mis Notas</a>
+      <button id="theme-toggle">🌙 Cambiar Tema</button>
+    </div>
+  </header>
+
+  <form action="/notes/add" method="POST">
+    <label>Título:</label>
+    <input type="text" name="title" required>
+
+    <label>Contenido:</label>
+    <textarea name="content" rows="8" required></textarea>
+
+    <button type="submit" class="btn-save">💾 Guardar Nota</button>
+  </form>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      toggleBtn.textContent = body.classList.contains('light-mode') ? '🌞 Modo Oscuro' : '🌙 Modo Claro';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Subir Imagen - NotasIA</title>
+  <link rel="stylesheet" href="/stylesheets/upload.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <h1>📸 Subir Imagen para Extraer Texto</h1>
+
+    <div class="top-buttons">
+      <a href="/notes" class="btn">← Volver</a>
+      <button id="theme-toggle" class="btn">🌙 Tema</button>
+    </div>
+  </header>
+
+  <form action="/notes/upload" method="POST" enctype="multipart/form-data">
+    <label for="image">Selecciona una imagen:</label>
+
+    <div class="custom-file">
+      <input type="file" id="image" name="image" accept="image/*" required>
+      <span id="file-name">Ningún archivo seleccionado</span>
+    </div>
+
+    <button type="submit" class="submit-btn">📝 Extraer Texto</button>
+  </form>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      toggleBtn.textContent = body.classList.contains('light-mode') ? '🌞 Tema' : '🌙 Tema';
+    });
+
+    const fileInput = document.getElementById('image');
+    const fileNameDisplay = document.getElementById('file-name');
+
+    fileInput.addEventListener('change', () => {
+      fileNameDisplay.textContent = fileInput.files.length > 0
+        ? fileInput.files[0].name
+        : "Ningún archivo seleccionado";
+    });
+  </script>
+</body>
+</html>

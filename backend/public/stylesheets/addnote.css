@@ -1,0 +1,116 @@
+/* stylesheets/addnote.css */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 20px;
+  transition: background-color 0.4s, color 0.4s;
+}
+
+/* Tema oscuro */
+body.dark-mode {
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+}
+
+/* Tema claro */
+body.light-mode {
+  background-color: #f5f5f5;
+  color: #1e1e2f;
+}
+
+h1 {
+  color: #9f79ff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.top-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+a.btn-back {
+  text-decoration: none;
+  background-color: #2b2b40;
+  color: #00ffd5;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+a.btn-back:hover {
+  background-color: #00c2a7;
+  color: #000;
+}
+
+#theme-toggle {
+  background-color: #9f79ff;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: #7c4dff;
+}
+
+form {
+  background-color: #2b2b40;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 255, 213, 0.2);
+  text-align: left;
+}
+
+body.light-mode form {
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #404060;
+  color: #fff;
+  font-size: 16px;
+}
+
+body.light-mode input[type="text"],
+body.light-mode textarea {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.btn-save {
+  background-color: #00ffd5;
+  color: #000;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-save:hover {
+  background-color: #00c2a7;
+}

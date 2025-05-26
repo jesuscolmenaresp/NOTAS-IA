@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mis Archivos PDF - NotasIA</title>
+  <link rel="stylesheet" href="/stylesheets/files.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <h1>📂 Mis Archivos PDF</h1>
+
+    <div class="top-buttons">
+      <a href="/dashboard" class="btn">🏠 Dashboard</a>
+      <a href="/notes" class="btn">📝 Notas</a>
+      <a href="/logout" class="btn">🔒 Cerrar Sesión</a>
+      <button id="theme-toggle" class="btn">🌙 Tema</button>
+    </div>
+  </header>
+
+  <main>
+    <h2>Archivos Generados:</h2>
+
+    <% if (files.length > 0) { %>
+      <ul class="file-list">
+        <% files.forEach(file => { %>
+          <li>
+            <div class="file-entry">
+              <a href="/<%= file.file_path %>" download target="_blank" class="file-link">
+                📄 <%= file.file_path.split('/').pop() %>
+              </a>
+              <small class="file-date">
+                (Generado el <%= new Date(file.created_at).toLocaleString('es-ES', {
+                  day: '2-digit',
+                  month: '2-digit',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                  hour12: true
+                }) %>)
+              </small>
+              <form action="/files/<%= file.id %>/delete" method="POST" onsubmit="return confirm('¿Seguro que quieres eliminar este archivo PDF?')">
+                <button type="submit" class="delete-btn">🗑️ Eliminar</button>
+              </form>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p class="no-files">No tienes archivos PDF generados aún.</p>
+    <% } %>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      toggleBtn.textContent = body.classList.contains('light-mode') ? '🌞 Tema' : '🌙 Tema';
+    });
+  </script>
+</body>
+</html>

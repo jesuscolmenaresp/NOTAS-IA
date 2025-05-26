@@ -1,0 +1,199 @@
+/* stylesheets/notes.css */
+
+body {
+    background-color: #1e1e2f;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 40px;
+    text-align: center;
+  }
+  
+  h1 {
+    color: #9f79ff;
+    margin-bottom: 10px;
+    font-size: 36px;
+  }
+  
+  h2 {
+    color: #00ffd5;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 28px;
+  }
+  
+  nav {
+    margin-bottom: 30px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #00ffd5;
+    background-color: #2b2b40;
+    padding: 10px 18px;
+    margin: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  nav a:hover {
+    background-color: #00c2a7;
+    color: #000;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+  }
+  
+  li {
+    background-color: #2b2b40;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+  }
+  
+  strong {
+    font-size: 20px;
+    color: #9f79ff;
+  }
+  
+  p {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+  
+  small {
+    color: #cccccc;
+    font-size: 14px;
+  }
+  
+  a[href*="/edit"],
+  a[href*="/download"] {
+    margin-right: 10px;
+  }
+  
+  form {
+    display: inline;
+  }
+  
+  button {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ff1f1f;
+  }
+  
+  /* Modo claro */
+body.light-mode {
+  background-color: #f9f9f9;
+  color: #222;
+}
+
+body.light-mode h1 {
+  color: #7e4aff;
+}
+
+body.light-mode h2 {
+  color: #007a6f;
+}
+
+body.light-mode nav a {
+  background-color: #e0e0e0;
+  color: #007a6f;
+}
+
+body.light-mode nav a:hover {
+  background-color: #007a6f;
+  color: #fff;
+}
+
+body.light-mode li {
+  background-color: #ffffff;
+  color: #222;
+}
+
+/* Navbar estilo mejorado */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Botón de cambiar tema */
+#toggle-theme {
+  background-color: #4d4dff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#toggle-theme:hover {
+  background-color: #1a1aff;
+}
+
+/* Acciones de nota */
+.note-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Botones */
+.btn {
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.btn.download {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn.download:hover {
+  background-color: #3e8e41;
+}
+
+.btn.edit {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn.edit:hover {
+  background-color: #0b7dda;
+}
+
+.btn.delete {
+  background-color: #f44336;
+  color: white;
+  border: none;
+}
+
+.btn.delete:hover {
+  background-color: #da190b;
+}

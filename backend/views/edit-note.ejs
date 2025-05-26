@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Nota - NotasIA</title>
+  <link rel="stylesheet" href="/stylesheets/edit-note.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <h1>✏️ Editar Nota</h1>
+    <div class="top-bar">
+      <a href="/notes" class="btn">⬅️ Volver a las Notas</a>
+      <button id="theme-toggle" class="btn">🌙 Tema</button>
+    </div>
+  </header>
+
+  <main>
+    <form action="/notes/<%= note.id %>/edit" method="POST" class="note-form">
+      <label for="title">Título:</label>
+      <input type="text" id="title" name="title" value="<%= note.title %>" required>
+
+      <label for="content">Contenido:</label>
+      <textarea id="content" name="content" rows="12" required><%= note.content %></textarea>
+
+      <button type="submit" class="save-btn">💾 Guardar Cambios</button>
+    </form>
+  </main>
+
+  <script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      body.classList.toggle('light-mode');
+      toggleBtn.textContent = body.classList.contains('light-mode') ? '🌞 Tema' : '🌙 Tema';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Class OCR</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <span style="font-size: 1.6rem; color: #9e8fff; font-weight: bold;">Class OCR</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#caracteristicas">Características</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="/login" class="btn-nav">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <h3>Bienvenidos a Class OCR</h3>
+        <h1>Convierte, Organiza y<br>Digitaliza tus apuntes fácilmente</h1>
+        <p>Desde notas rápidas hasta extensos documentos.</p>
+          Class OCR te ayuda a digitalizar, organizar y acceder a tus apuntes fácilmente.
+          Transforma tu forma de estudiar, ahorra tiempo y mantén tus ideas siempre disponibles.<br>
+        <a class="btn-principal" href="/register">Empieza ahora</a>
+      </div>
+      <div class="hero-image">
+        <img src="/images/nota.png" alt="Ilustración del sistema">
+      </div>
+    </div>
+  </main>
+
+  <section id="caracteristicas" class="features">
+    <div class="container">
+      <h2>¿Qué puedes hacer con Class OCR?</h2>
+      <ul>
+          <li>📸 Sube imágenes de tus apuntes manuscritos</li>
+          <li>🧠 Convierte automáticamente a texto digital con OCR</li>
+          <li>📄 Descarga tus notas como documentos PDF</li>
+          <li>📂 Almacena y consulta tus apuntes desde cualquier lugar</li>        
+      </ul>
+    </div>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <div class="container">
+      <h2>Contacto</h2>
+      <p>¿Tienes preguntas o sugerencias? Escríbenos:</p>
+      <ul>
+        <li>📧 Email: contacto@classocr.com</li>
+        <li>📱 WhatsApp: +58 424-3648845</li>
+      </ul>
+    </div>
+    <div class="hero-image">
+      <img src="/images/logo.png" alt="Logo grande" style="max-width: 200px;">
+    </div>
+    
+  </section>
+  
+
+  <footer class="footer-cookies" id="cookieBanner">
+    <p>Al utilizar este sitio web, aceptas nuestra <a href="#">política de cookies</a>.
+      <button onclick="ocultarBanner()">Aceptar</button>
+    </p>
+  </footer>
+  
+
+</body>
+<script>
+  function ocultarBanner() {
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+      banner.style.display = 'none';
+    }
+  }
+</script>
+
+</html>
